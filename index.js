@@ -1,4 +1,5 @@
 require("dotenv").config();
+const CONFIG = require("./src/config/config");
 const express = require("express");
 const mongoose = require("mongoose");
 const server = express();
@@ -11,7 +12,7 @@ const userRouter = require("./src/route/useRoute");
 
 //  *********** database connection*************************
 mongoose
-  .connect("mongodb://localhost:27017/eventManagement")
+  .connect(CONFIG.DB.CONNECTION_URL)
   .then(() => {
     console.log("database Connection Successfully!");
   })
@@ -21,6 +22,6 @@ mongoose
 //************************************************************/
 server.use("/users/", userRouter.Routers);
 
-server.listen(1900, () => {
+server.listen(CONFIG.PORT, () => {
   console.log("server start ");
 });
