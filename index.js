@@ -2,8 +2,10 @@ require("dotenv").config();
 const CONFIG = require("./src/config/config");
 const express = require("express");
 const mongoose = require("mongoose");
+const logger = require("./src/logger");
 const server = express();
 server.use(express.json());
+server.use(express.urlencoded({ extended: true }));
 
 //*******************router************************* */
 const userRouter = require("./src/route/useRoute");
@@ -14,7 +16,7 @@ const userRouter = require("./src/route/useRoute");
 mongoose
   .connect(CONFIG.DB.CONNECTION_URL)
   .then(() => {
-    console.log("database Connection Successfully!");
+    logger.info(" database Connection Successfully!")
   })
   .catch((error) => {
     console.log("Connection failed!", error);
@@ -23,5 +25,5 @@ mongoose
 server.use("/users/", userRouter.Routers);
 
 server.listen(CONFIG.PORT, () => {
-  console.log("server start ");
+  logger.info(`Server listening on http://localhost:${CONFIG.PORT}`);
 });
