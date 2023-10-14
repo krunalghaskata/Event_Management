@@ -1,6 +1,8 @@
-const userController  = require ('./user/index')
+const userController = require('./user/index')
+const eventController = require('./event/index')
 
 const controller = {
-    ...userController
+    ...userController,
+    ...eventController
 }
 module.exports = controller;

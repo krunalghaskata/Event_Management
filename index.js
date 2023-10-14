@@ -9,7 +9,7 @@ server.use(express.urlencoded({ extended: true }));
 
 //*******************router************************* */
 const userRouter = require("./src/route/useRoute");
-
+const eventRouter = require("./src/route/eventRoute");
 //*************************************************** */
 
 //  *********** database connection*************************
@@ -21,9 +21,14 @@ mongoose
   .catch((error) => {
     console.log("Connection failed!", error);
   });
-//************************************************************/
-server.use("/users/", userRouter.Routers);
 
+//**********************ROUTER **************************************/
+server.use("/users/", userRouter.Routers);
+server.use("/events/", eventRouter.Routers);
+//******************************************************************/
+ 
+//*********************SERVER**************************************** */
 server.listen(CONFIG.PORT, () => {
   logger.info(`Server listening on http://localhost:${CONFIG.PORT}`);
 });
+//******************************************************************* */
