@@ -11,6 +11,9 @@ const message = {
   REQUIRED_INPUT: "Input is required!",
   USER_EXIST: "User already exists, please login!",
   LOG_OUT: "user log out successfully",
+  EVENT_NOT_FOUND: "event data not found",
+  INVITE_USER: "user invited success",
+  USER_EVENT_NOT_FOUND: "user or event not found!!!",
 };
 
 const getMessage = (key) => {

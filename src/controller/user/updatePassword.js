@@ -16,7 +16,7 @@ const updatePassword = async (req, res) => {
     user.password = await auth.generateHash(password)
     user.resetToken = null
     await user.save()
-    res.clearCookie('token')
+    // res.clearCookie('token')
     return res.status(200).send(getMessage('PASSWORD_CHANGED_SUCCESSFULLY'))
 
   } catch (error) {

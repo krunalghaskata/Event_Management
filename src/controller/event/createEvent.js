@@ -1,15 +1,25 @@
 const Event = require("../../model/eventModel");
+const getMessage = require("../../utils/message");
 
 const createEvent = async (req, res) => {
   try {
-    const eventData = req.body;
-    const event = await Event.find(eventData);
-    if (!event) {
-      return res.status(404).send("NOT FOUND" );
+    const { name, date, description, organizer, attendees } = req.body;
+    if (!(name && date && description)) {
+      return res.send(getMessage("REQUIRED_INPUT"));
     }
+    const event = new Event({
+      name,
+      date,
+      description,
+      organizer,
+      attendees,
+    });
+
+    await event.save();
     res.status(201).send(event);
-  } catch (err) {
-    res.status(400).send(error);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send(error);
   }
 };
 
