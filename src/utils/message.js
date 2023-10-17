@@ -14,6 +14,8 @@ const message = {
   EVENT_NOT_FOUND: "event data not found",
   INVITE_USER: "user invited success",
   USER_EVENT_NOT_FOUND: "user or event not found!!!",
+  PASSWORD_UPDATE: "Password updated successfully",
+  INVALID_OLD_PASSWORD:"Invalid old password"
 };
 
 const getMessage = (key) => {

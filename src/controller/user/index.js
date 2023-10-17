@@ -5,9 +5,9 @@ const allUserFind = require("./allUser");
 const userUpdate = require("./userUpdate.js");
 const userDelete = require("./userDelete");
 const logout = require("./Logout");
-const forgotPassword = require("./forgotPassword");
-const resetPassword = require("./resetPassword");
-const updatePassword = require("./updatePassword");
+const updatePassword = require('./updatePassword')
+const resetPassword = require('./resetPassword')
+const  forgotPassword =require ('./forgotPassword.js')
 module.exports = {
   signup,
   login,
@@ -16,7 +16,8 @@ module.exports = {
   userUpdate,
   userDelete,
   logout,
-  forgotPassword,
-  resetPassword,
   updatePassword,
+  resetPassword,
+  forgotPassword
+ 
 };
