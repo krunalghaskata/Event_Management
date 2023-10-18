@@ -12,7 +12,7 @@ Routers.post("/login", Controller.login);
 Routers.post("/logout", Controller.logout);
 Routers.patch("/userUpdate", checkAuth, Controller.userUpdate);
 Routers.delete("/userDelete", checkAuth, Controller.userDelete);
-Routers.post("/resetPassword", checkAuth, Controller.resetPassword);
+Routers.post("/resetPassword/:token", Controller.resetPassword);
 Routers.post("/updatePassword", Controller.updatePassword);
 Routers.post("/forgotPassword", Controller.forgotPassword);
 

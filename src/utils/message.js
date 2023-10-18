@@ -12,10 +12,11 @@ const message = {
   USER_EXIST: "User already exists, please login!",
   LOG_OUT: "user log out successfully",
   EVENT_NOT_FOUND: "event data not found",
-  INVITE_USER: "user invited success",
+  INVITE_USER: "user invited successfully",
   USER_EVENT_NOT_FOUND: "user or event not found!!!",
   PASSWORD_UPDATE: "Password updated successfully",
-  INVALID_OLD_PASSWORD:"Invalid old password"
+  INVALID_OLD_PASSWORD: "Invalid old password",
+  RESET_PASSWORD: "Password reset successfully",
 };
 
 const getMessage = (key) => {
