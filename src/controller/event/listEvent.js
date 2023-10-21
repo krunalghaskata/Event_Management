@@ -7,13 +7,13 @@ const listEvents = async (req, res) => {
     const limit = parseInt(req.query.limit) || 10;
     const skip = (page - 1) * limit;
 
-    // Implement sorting by a field (e.g., date)
+   // Implement sorting by a field (e.g., date)
     const sortField = req.query.sortField || "date";
     const sortOrder = req.query.sortOrder || "asc";
     const sort = {};
     sort[sortField] = sortOrder === "asc" ? 1 : -1;
 
-    //  date filtering
+     //date filtering
     const startDate = req.query.startDate || null;
     const endDate = req.query.endDate || null;
     const dateFilter = {};
