@@ -1,4 +1,5 @@
 const User = require("../../model/userModel");
+const getMessage = require("../../utils/message");
 
 const userDelete = async (req, res) => {
   try {
@@ -6,10 +7,10 @@ const userDelete = async (req, res) => {
 
     const userInstance = await User.findOne({ email });
     if (!userInstance) {
-      return res.status(404).send("USER NOT FOUND !!");
+      return res.send(getMessage("USER_NOT_FOUND"));
     }
     await userInstance.deleteOne({ email });
-    res.status(200).send("USER DELETE");
+    res.status(200).send(getMessage("USER_DELETE`"));
   } catch (error) {
     res.status(500).send(error);
   }

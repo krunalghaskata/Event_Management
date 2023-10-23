@@ -30,21 +30,4 @@ const updatePassword = async (req, res) => {
 
 module.exports = updatePassword;
 
-// try {
-//   const { oldPassword, newPassword } = req.body;
-//   const verifyToken = await auth.verifyToken(token);
-//   const user = await User.findById(verifyToken.id);
-//   if (!user) {
-//     return res.status(404).send(getMessage("USER_NOT_FOUND"));
-//   }
-//   const passwordMatch = await (oldPassword, user.password);
-//   if (!passwordMatch) {
-//     return res.send(getMessage("INVALID_PASSWORD"));
-//   }
-//   const passwordHash = await auth.generateHash(newPassword);
-//   await user.updateOne({ password: passwordHash }, { new: true });
-//   res.clearCookie("token");
-//   return res.status(200).send(getMessage("PASSWORD_CHANGED_SUCCESSFULLY"));
-// } catch (error) {
-//   res.status(500).send(error);
-// }
+ 

@@ -38,7 +38,7 @@ const listEvents = async (req, res) => {
 
     res.json(events);
   } catch (error) {
-    res.status(500).json({ error: "An error occurred" });
+    res.status(500).send(error);
   }
 };
 

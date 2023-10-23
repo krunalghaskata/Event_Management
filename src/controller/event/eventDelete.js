@@ -1,4 +1,5 @@
 const Event = require("../../model/eventModel");
+const  getMessage = require('../../utils/message')
 
 const deleteEvent = async (req, res) => {
   try {
@@ -6,12 +7,12 @@ const deleteEvent = async (req, res) => {
     const deletedEvent = await Event.findByIdAndRemove(id);
 
     if (deletedEvent) {
-      res.status(201).json({ message: "Event deleted successfully" });
+      res.status(201).send(getMessage("EVENT_DELETE"));
     } else {
-      res.status(404).json({ message: "Event not found" });
+      res.status(404).send(getMessage("EVENT_NOT_FOUND"));
     }
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).send(error);
   }
 };
 

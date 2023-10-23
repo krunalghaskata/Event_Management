@@ -15,7 +15,7 @@ const userUpdate = async (req, res) => {
       password = await generateHash(password);
     }
     await userInstance.updateOne({ ...req.body, password });
-    await purgeCacheByKey(userInstance.id);
+    // await purgeCacheByKey(userInstance.id);
     res.status(200).send(getMessage("USER_UPDATED"));
   } catch (error) {
     res.status(500).send(error);

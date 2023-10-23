@@ -17,6 +17,8 @@ const message = {
   PASSWORD_UPDATE: "Password updated successfully",
   INVALID_OLD_PASSWORD: "Invalid old password",
   RESET_PASSWORD: "Password reset successfully",
+  EVENT_DELETE: "Event deleted successfully",
+  USER_DELETE :"user delete successfully"
 };
 
 const getMessage = (key) => {
